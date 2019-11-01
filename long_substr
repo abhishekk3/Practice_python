@@ -1,0 +1,28 @@
+#This is one of the leetcode problem where we have given a string and we need to 
+#find the length of the longest substring without repeating characters.
+def long_substr(s):
+
+  S=list(s)
+  A=[]
+  l=0
+  B=[]
+
+  for i in range(len(S)):
+    if S[i] not in A:
+      A.append(S[i])
+      B=A.copy()
+  
+    else:
+      if l <= len(A):
+        l=len(A)
+      A.clear()
+      A.append(S[i])
+      #print(A)
+
+  print(l)
+  print(''.join(B))
+  
+
+long_substr('abcabcbb')
+long_substr('bbbbbbbbbb')
+long_substr('pwwkew')
