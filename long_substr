@@ -10,7 +10,8 @@ def long_substr(s):
   for i in range(len(S)):
     if S[i] not in A:
       A.append(S[i])
-      B=A.copy()
+      if len(B) < len(A):
+        B=A.copy()
   
     else:
       if l <= len(A):
