@@ -10,7 +10,7 @@ def replace_none(arr):
     for i in range(len(arr)):
         if arr[i] == None:
             for j in range(i+1,len(arr)):
-                if j is not None and i+1 < len(arr):
+                if arr[j] is not None and i+1 < len(arr):
                     arr.insert(i,arr[j])
                     arr.pop(j)
                     break
