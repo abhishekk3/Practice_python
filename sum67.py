@@ -5,6 +5,7 @@
 #sum67([1, 2, 2, 6, 99, 99, 7]) → 5
 #sum67([1, 1, 6, 7, 2]) → 4
 
+#1st method
 def sum67(a):
 
     sum = 0     
@@ -25,7 +26,7 @@ def sum67(a):
     print(sum)
                 
     
-    
+#2nd method
 def sum67_new(nums):
 
     total_sum = 0
