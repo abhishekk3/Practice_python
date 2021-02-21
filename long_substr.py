@@ -28,25 +28,25 @@ def long_substr(s):
 #2nd method
 def lengthOfLongestSubstring(s: str):
     
-    sett = set(s[0])
+    listt = list(s[0])
     st = s[0]
     ls = []
     i = 1
     
     while i < len(s):
         
-        if s[i] != s[i-1] and s[i] not in sett:
+        if s[i] != s[i-1] and s[i] not in listt:
             st += s[i]
-            sett.add(s[i])
+            listt.append(s[i])
             i += 1
         else:
             ls.append(st)
             s = s.replace(s[0],'',1)
             st=""
-            sett.clear()
+            listt.clear()
             
             if len(s) > 0:
-                sett = set(s[0])
+                listt = list(s[0])
                 st = s[0]
                 i = 1
             else:
