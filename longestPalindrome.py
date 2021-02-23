@@ -24,64 +24,19 @@ def longestPalindrome(s: str):
     
         if len(s) == 1:
             return(s)
-        
-        if len(s) == 2:
-            if s == s[::-1]:
-                return (s)
-            else:
-                return(s[0])
              
-    
-        if len(s) > 2:
+        if len(s) >= 2:
         
             for i in range(len(s)):
-                st = ""
-                st = st + s[i]
                 for j in range(i+1,len(s)):
-                    st = st + s[j]
-                    if st == st[::-1]:
-                        palin_list.append(st)
-                s.replace(s[i],"",1)
+                    if s[i:j] == s[i:j][::-1]:
+                        palin_list.append(s[i:j])
                     
             if not palin_list:
                 return (s[0])
             else:
-
                 a = max((map(len,palin_list)))
-
                 b = [i for i in palin_list if len(i) == a]
-
                 return(b[0])
-
-#2nd method
-
-def longestPalindrome():
-    
-        s = "abcda"
-        
-        l = []
-    
-        if len(s) == 1:
-            print(s)
-
-        if len(s) >= 2:
-            
-            for i in range(len(s)):
-                
-                for j in range(len(s),i+1,-1):
-                    
-                    if s[i:j] == s[i:j][::-1]:
-                        l.append(s[i:j])
-                        break
-            
-            if not l:
-                print (s[0])
-            else:
-        
-                x = max(map(len,l))
-
-                a = [ele for ele in l if len(ele) == x]
-
-                print(a[0])
 
                     
